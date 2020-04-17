@@ -1,0 +1,17 @@
+net: "/home/sun/MobileNet-Caffe-master/cifar10/mobilenet_train.prototxt"
+test_iter: 100 #total 8384images = iter*batchsize(64)
+test_interval: 100 
+# lr for fine-tuning should be lower than when starting from scratch
+base_lr: 0.0001  #elesun 0.001
+lr_policy: "step"
+gamma: 0.1
+# stepsize should also be lower, as we're closer to being done
+stepsize: 5000
+display: 50
+max_iter: 10000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 2000
+snapshot_prefix: "/home/sun/MobileNet-Caffe-master/cifar10/model/sun_mobilenet"
+# uncomment the following to default to CPU mode solving
+solver_mode: CPU
